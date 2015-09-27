@@ -29,6 +29,7 @@ int main(){
 			cout << i << endl;
 
 	// count the minimum number of moves(add 1) needed to get a prime number
+	// n must be equal to prime number or prime number - 1
 	int cunt = 0;
 	for (int i = n; i >= 0; i--){
 		if (isPrime[i])
