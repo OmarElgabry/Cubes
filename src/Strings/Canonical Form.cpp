@@ -37,7 +37,7 @@ int main(){
 	permutation("Happy Coding Day");
 
 	// check if each string equals to the canonical form(all possible permutations for above string)
-	string queries[n] = { "HappyCodingDay", "CodeHappyDay", "DayHappyCoding" };
+	string queries[n] = { "HappyCodingDay", "NotEqualToCanonicalForm", "DayHappyCoding" };
 	int size = (int)str_permutation.size();
 
 	for (int i = 0; i < n; i++){
