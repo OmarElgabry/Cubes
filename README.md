@@ -144,6 +144,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	
 | Max Number | Given a number, remove **K** numbers so that result is max | ```Input:``` 11912346213, k=4<br> ```Output``` 9346213| O(number of digits) | [MAX_NUM](http://www.spoj.com/problems/MAX_NUM/)
+| Min Number | Given a number, remove **K** numbers so that result is min | ```Input:``` 11912346213, k=4<br> ```Output``` 1112213| O(number of digits) | NA
 
 ## Divide & Conquer<a name="divide-and-conquer"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
