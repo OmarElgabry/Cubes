@@ -33,12 +33,13 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | ------------- | ------------- | ------------- | -----      | ----- 	|
 | Is Prime      | Checks if a number is prime or not | ```Input:``` 5 <br> ```Output``` true |O(sqrt(n))| NA |
 | Prime Numbers | Returns all prime numbers till **N** using Sieve implementation | ```Input:``` 10 <br> ```Output``` {2, 3, 5, 7} | O(n * ln * ln)| [B. Prime Matrix](http://codeforces.com/problemset/problem/271/B) |
-| Divisors | Returns all divisors of a number | ```Input:``` 10 <br> ```Output``` {1, 10, 2, 5}  | O(sqrt(n)) | [B. Easy Number Challenge](http://codeforces.com/problemset/problem/236/B) |
+| Divisors | Returns all divisors of a number | ```Input:``` 10 <br> ```Output``` {1, 10, 2, 5}  | O(sqrt(n)) | [B. Easy Number Challenge](http://codeforces.com/problemset/problem/236/B), [B. Duff in Love](http://codeforces.com/problemset/problem/588/B) |
 | Factorize | Returns all prime factors of a number | ```Input:``` 4 <br> ```Output``` {2, 2} |O(sqrt(n)) | NA |
 | Count Range Divisors | Returns the count of divisors for each number from 1 to **N** | ```Input:``` 10 <br> ```Output``` 27 | O(n) | NA |
 | Factorial | Returns the factorial of a number |  ```Input:``` 5 <br> ```Output``` 120 | O(n) | NA |
 | GCD & LCM | Returns the greatest common divisor and least common multiple| ```Input:``` 6, 8 <br> ```Output``` GCD=2, LCM=84 | NA | [A. Fox and Number Game](http://codeforces.com/problemset/problem/389/A)
 | Reverse Number | Reverse a number  | ```Input:``` 12340 <br> ```Output``` 4321 | O(n) | [RREVERSE](http://www.spoj.com/problems/RREVERSE/)
+| Sum of Primes | Given **N**, where N is odd number > 1, return 1, 2, or 3 prime numbers <br>where their summation = N. There must be a solution.  | ```Input:``` 27 <br> ```Output``` 2 2 23| NA | [D. Dima and Lisa](http://codeforces.com/problemset/problem/584/D)
 
 ## Strings<a name="strings"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -51,12 +52,13 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Words Values | Rerurns summation of values for each word(if exists)  | ```Input:``` {"hello" => 5, "john" => 2}, "hello world"<br> ```Output``` 5 | O(n) | [Hay Points](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1236), [Babelfish](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1223)
 | Reverse String | Keep reversing a string from a given index till it's opposite index<br>(i.e. If a string has size of 5, and index equals to 1, then reverse from 1 till 3 inclusive) | ```Input:``` "hello", Indexes={0, 3, 2} <br> ```Output``` oellh | O(n * number of queries) | NA
 | Equal Lists | What's the min number of strings to be removed so that both lists can have same strings regardless of their order  | ```Input:``` { "foo", "bar", "baz", "foo", "foo", "yard" }, { "bar", "bar", "baz", "yard", "foo", "yard" } <br> ```Output``` 4 | O(n) | [Just Prune The List](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3200)
-| Unique Characters | Given string of characters, what's the count of unique characters and print them  | ```Input:``` "hMshMZ" <br> ```Output``` 4<br>{h, M, s, Z} | O(n) | [A. Inna and Alarm Clock](http://codeforces.com/problemset/problem/390/A), [A. Valera and Antique Items](http://codeforces.com/problemset/problem/441/A), [A. I Wanna Be the Guy](http://codeforces.com/problemset/problem/469/A)
+| Unique Characters | Given string of characters, what's the count of unique characters and print them  | ```Input:``` "hMshMZ" <br> ```Output``` 4<br>{h, M, s, Z} | O(n) | [A. Inna and Alarm Clock](http://codeforces.com/problemset/problem/390/A), [A. Valera and Antique Items](http://codeforces.com/problemset/problem/441/A), [A. I Wanna Be the Guy](http://codeforces.com/problemset/problem/469/A), [A. Asphalting Roads](http://codeforces.com/problemset/problem/583/A)
 | Frequent Character | Count frequency of each character in a string, and get the max character(s) occurred.  | ```Input:``` "The characTer T is The mosT frequenT characTer in This sTring" <br> ```Output``` character=T count=9 | O(n) | NA
 | Count Words | Count frequency of each word in the given string, and print them in the same order | ```Input:``` "foo bar baz foo foo yard" <br> ```Output``` foo 3, baz 1, bar 1, yard 1| O(n) | [The Department of Redundancy Department](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=425)
 | Last Appearance | Find the last index of each character in a string | ```Input:``` "hello" <br> ```Output``` h 0, e 1, l 3, o 4| O(n) | [Broken Keyboard](http://www.spoj.com/problems/BROKEN/)
 | Sequence of Characters | Check if a sequence of characters exists or not | ```Input:``` "can you find the given characters in order?", "yes" <br> ```Output``` true | O(n) | [B. Suffix Structures](http://codeforces.com/problemset/problem/448/B)
 | Canonical Form | Given a string _str_ and a list of strings _queries_.  Check if each string in _queries_ equals to any value of _permutation(str)_. <br>(i.e. _permutation(str)_ is the standard format that will be compared with each query string).| ```Input:``` str="Happy Coding Day", queries={"HappyCodingDay", "CodeHappyDay", "DayHappyCoding"}<br> ```Output``` {"HappyCodingDay", "DayHappyCoding"}| O(n!) | [B. Hard Work](http://codeforces.com/problemset/problem/61/B)
+| Replace Characters | Given a string, and a set of queries, each query has two characters. For every query, Replace first character with second in the given string, and vice-versa, and then return the resulting string. | ```Input:``` string="aabbccdd", queries{('a', 'b'), ('c', 'd'), ('d', 'a')} <br> ```Output``` bbddaacc| O(queries) | [B. Rebranding](http://codeforces.com/problemset/problem/591/B)
 
 ## Sorting<a name="sorting"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -79,17 +81,17 @@ Implementation of interesting algorithms in C++ and their related problems on on
 ## Window<a name="window"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	|
-| Max 1D Subarray(Fixed Length) | Given array, what's the max sub array of length l | ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, l=3<br> ```Output``` 27 | O(n) | NA
+| Max 1D Subarray(Fixed Length) | Given array, what's the max sub array of length **L** | ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, L=3<br> ```Output``` 27 | O(n) | NA
 | Max 2 Subarrays | Given array, find the largest 2 sub arrays(not interleaved) of length **L** | ```Input:``` {1, 2, 1, 15, 2, 3, 6, 8, 3, 3, 8, 6}, l=3<br> ```Output``` [3 -> 5], [6 -> 8]| O(n) | NA
 
 
 ## Two Pointers<a name="two-pointers"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	|
-| Max Subarray(Less than or equal value) | Given array, find max subarray <= t. | ```Input:``` {6, 8, 14, 9, 4, 11, 10}, t=13<br> ```Output``` [3 -> 4]| O(n) | [B. Books](http://codeforces.com/problemset/problem/279/B)
+| Max Subarray(Less than or equal value) | Given array, find max subarray <= **t**. | ```Input:``` {6, 8, 14, 9, 4, 11, 10}, t=13<br> ```Output``` [3 -> 4]| O(n) | [B. Books](http://codeforces.com/problemset/problem/279/B)
 | Zuma | Given array, and a _tnum_ number that will be inserted at index _tindex_. <br>If at there is three or more contiguous similar numbers, they should be destroyed(erased). <br>This rule is applied until there are no more three or more contiguous similar numbers.<br> Count the destroyed numbers | ```Input:``` {5, 4, 4, 2, 2, 4, 4, 5, 5, 1, 7, 6}, tnum=2, tindex=4<br> ```Output``` 10| O(n) | [B. Balls Game](http://codeforces.com/problemset/problem/430/B)
 | Guess the Number | Given a set of queries like ">=1", "<2", ">-3", ...etc.<br>Guess the range of numbers that achieves these queries | ```Input:``` {">=", 1}, {">=", 3}, {">", -3}, {"<=", 55}<br> ```Output``` [3, 55]| O(n) | [416A - Guess a number!](http://codeforces.com/problemset/problem/416/A)
-| Reverse Number | Given array of values, Find All Xs & Ys in array, where X + Y = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {2, 8}, {4, 6}, {5, 5}| O(n) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
+| Reverse Number | Given array of values, Find All **Xs** & **Ys** in array, where X + Y = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {2, 8}, {4, 6}, {5, 5}| O(n) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
 
 
 ## Maximum Sum<a name="maximum-sum"></a>
@@ -104,12 +106,13 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | ------------- | ------------- | ------------- | -----      | ----- 	|
 | Bit Manipulations | Implementing various snippets: check if bit 0 or 1, set a bit to 1, return 2^k, <br>where k is th position of first 1-bit, get number of different bits, count number of 1 bits | ```Input:``` <br> ```Output``` | O(n) | [B. Fedor and New Game](http://codeforces.com/problemset/problem/467/B), <br>[B. The Child and Set](http://codeforces.com/problemset/problem/437/B)
 | Generate Combinations | Generate combinations with all possible sizes | ```Input:``` {1, 2} <br> ```Output``` {}, {1}, {2}, {1, 2} | O(n * 2^n) | [B. Preparing Olympiad](http://codeforces.com/problemset/problem/550/B), <br>[324. Problem Set](http://a2oj.com/p.jsp?ID=324)
+| Binary Conversions | Convert decimal to binary number(integer/string), and back to decimal.  | ```Input:``` 10 <br> ```Output``` {"1010", 10} | O(logN), O(N) | [B. New Year and Old Property](http://codeforces.com/problemset/problem/611/B)
 
 ## Recursion<a name="recursion"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	|
 | Print Number | Given a number print it and print number in bits recursively | ```Input:``` 213 <br> ```Output``` 213, 11010101  | O(n) | NA
-| 3n+1 | Given a number, if even divide by 2, if odd, multiply by 3, and add 1, then count the steps till n = 1 recursively | ```Input:``` 7 <br> ```Output``` 17 | NA | [The 3n + 1 problem](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=36)
+| 3n+1 | Given a number, if even divide by 2, if odd, multiply by 3, and add 1. <br>Count the steps till number = 1 recursively | ```Input:``` 7 <br> ```Output``` 17 | NA | [The 3n + 1 problem](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=36)
 
 ## BFS<a name="bfs"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -138,7 +141,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	
 | First & Last True | Given array of true and false, get the first and last true. <br>The first and last true represents the goal element.| ```Input:``` {true, true, true, true, true, true, false}, <br>{false, false, false, false, true, true, true}<br> ```Output``` last true=5, first true=4| O(logN) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
-| Max Subarray(Less than or equal value) | Given an array, find max subarray <= t. | ```Input:``` {6, 8, 14, 9, 4, 11, 10}, t=13<br> ```Output``` [3 -> 4]| O(NlogN) | [B. Books](http://codeforces.com/problemset/problem/279/B)
+| Max Subarray(Less than or equal value) | Given an array, find max subarray <= **t**. | ```Input:``` {6, 8, 14, 9, 4, 11, 10}, t=13<br> ```Output``` [3 -> 4]| O(NlogN) | [B. Books](http://codeforces.com/problemset/problem/279/B)
 
 ## Next Array<a name="next-array"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -150,7 +153,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	
 | Mergesort | Given array, sort it.| ```Input:``` {1, 4, -1, 0, 2, 6, 1, 145, 7}<br> ```Output``` 4321 | O(NlogN) | NA
-| Big Mod | Given B, P, & M, Find: B^P % M.| ```Input:``` B=2147483647, P=2147483647, M=46340<br> ```Output``` 13903 | O(logP) | [Big Mod](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=310)
+| Big Mod | Given **B**, **P**, & **M**, Find: B^P % M.| ```Input:``` B=2147483647, P=2147483647, M=46340<br> ```Output``` 13903 | O(logP) | [Big Mod](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=310)
 
 
 ## Grid<a name="grid"></a>
@@ -168,7 +171,9 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Generate Subarrays | Given array, Loop through each subarray of length **L**. | ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, L=5<br> ```Output``` 4321 | O((N/2)^2) | NA
 | Alternating Array | Given array, perform on each 4 consecutive elements the following operations: +1, -1, 0, 0.| ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} <br> ```Output``` { 2, 1, 3, 4, 6, 5, 7, 8, 10, 9 }| O(n) | [B - Jzzhu and Sequences](http://codeforces.com/problemset/problem/450/B)
 | Draw Triangle | Given **N** >= 3. Draw Triangle(Check Test Case) | ```Input:``` 5<br> ```Output``` <br>##D##<br>#DDD#<br>DDDDD<br>#DDD#<br>##D##| O(N^2) | [A. Little Pony and Crystal Mine](http://codeforces.com/problemset/problem/454/A), [A. Valera and X](http://codeforces.com/problemset/problem/404/A)
-| Unique Numbers | Given array of numbers, return count of unique values, and print them| ```Input:``` {7, 2, 4, 5, 16, 2, 0, 2, 4, 6}<br> ```Output``` count=7, numbers={7, 2, 4, 5, 16, 0, 6} | O(n) | [A. Inna and Alarm Clock](http://codeforces.com/problemset/problem/390/A), [A. Valera and Antique Items](http://codeforces.com/problemset/problem/441/A)
+| Unique Numbers | Given array of numbers, return count of unique values, and print them| ```Input:``` {7, 2, 4, 5, 16, 2, 0, 2, 4, 6}<br> ```Output``` count=7, numbers={7, 2, 4, 5, 16, 0, 6} | O(n) | [A. Inna and Alarm Clock](http://codeforces.com/problemset/problem/390/A), [A. Valera and Antique Items](http://codeforces.com/problemset/problem/441/A), [A. I Wanna Be the Guy](http://codeforces.com/problemset/problem/469/A), [A. Asphalting Roads](http://codeforces.com/problemset/problem/583/A)
+| Hamming Distance Sum | Given a string **X** of length <= 10^5 with 1s and 0s, and string **Y** with length <= length of X. Get summation of numbers of different bits for each sub-string of X with string Y.| ```Input:``` Y="01", X="00111"<br> ```Output``` 3 | O(N) | [B. Hamming Distance Sum](http://codeforces.com/contest/608/problem/B)
+| Adjacent Characters | Given 2D array **N x M** of '.' & '#' characters, and set of queries, each query with two numbers **c1 & c2**. For each query, return the summation of number of two adjacent '.' characters in each row from column c1 to c2.| ```Input:``` N=5,M=8,<br>{{....#..#},{.#......},{##.#....},{##..#.##},{........}},<br>queries={(1,3),(2,5)}<br> ```Output``` {6, 9} | O(queries * N) | [C. New Year and Domino](http://codeforces.com/contest/611/problem/C)
 
 ## Support <a name="support"></a>
 I've written these snippets in my free time during my studies. If you find it useful, please support the project by spreading the word.
