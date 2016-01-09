@@ -24,6 +24,18 @@ int convertToBinaryInt(int n, int &binary_int){
 	return binary_int;
 }
 
+int convertToDecimal(string &binary_str){
+
+	int base = 1, decimal = 0;
+	for (int i = (int)binary_str.size() - 1; i >= 0; i--){
+		if (binary_str[i] == '1')
+			decimal += base;
+		base = base * 2;
+	}
+
+	return decimal;
+}
+
 int main(){
 
 	const int decimal_num = 26;
@@ -52,12 +64,8 @@ int main(){
 	cout << "convert binary: " << binary_str << " to decimal: " << decimal << endl;
 
 	// convert the string binary to decimal back
-	base = 1, decimal = 0;
-	for (int i = (int)binary_str.size() - 1; i >= 0; i--){
-		if (binary_str[i] == '1')
-			decimal += base;
-		base = base * 2;
-	}
+	decimal = convertToDecimal(binary_str);
+	
 	cout << "convert binary: " << binary_str << " to decimal: " << decimal << endl;
 
 	return 0;
