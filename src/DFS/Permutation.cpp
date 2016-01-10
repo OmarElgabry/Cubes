@@ -1,12 +1,13 @@
 #include <cstdlib>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 const int n = 3;
 int num[n] = { 4, 5, 6 }, cur[n];
 bool vis[n];
 
-void permutation(int i) {
+void permutation_dfs(int i) {
 
 	if (i == n){
 		for (int j = 0; j < n; ++j)
@@ -20,17 +21,31 @@ void permutation(int i) {
 			vis[j] = 1;
 			cur[i] = num[j];
 
-			permutation(i + 1);
+			permutation_dfs(i + 1);
 
 			vis[j] = 0;
 		}
 	}
 }
 
-int main(){
+void permutation() {
 
-	permutation(0);
+	sort(num, num + n);
+	do{
+		for (int j = 0; j < n; ++j)
+			cout << num[j];
+		cout << "\n";
+	} while (next_permutation(num, num + n));
+
+}
+
+int main() {
+
+	// using recursion
+	permutation_dfs(0);
+
+	// using next_permutation()
+	permutation();
 
 	return 0;
-
 }
