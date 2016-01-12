@@ -57,7 +57,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Count Words | Count frequency of each word in the given string, and print them in the same order | ```Input:``` "foo bar baz foo foo yard" <br> ```Output``` foo 3, baz 1, bar 1, yard 1| O(n) | [The Department of Redundancy Department](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=425)
 | Last Appearance | Find the last index of each character in a string | ```Input:``` "hello" <br> ```Output``` h 0, e 1, l 3, o 4| O(n) | [Broken Keyboard](http://www.spoj.com/problems/BROKEN/)
 | Sequence of Characters | Check if a sequence of characters exists or not | ```Input:``` "can you find the given characters in order?", "yes" <br> ```Output``` true | O(n) | [B. Suffix Structures](http://codeforces.com/problemset/problem/448/B)
-| Canonical Form | Given a string _str_ and a list of strings _queries_.  Check if each string in _queries_ equals to any value of _permutation(str)_. <br>(i.e. _permutation(str)_ is the standard format that will be compared with each query string).| ```Input:``` str="Happy Coding Day", queries={"HappyCodingDay", "CodeHappyDay", "DayHappyCoding"}<br> ```Output``` {"HappyCodingDay", "DayHappyCoding"}| O(n!) | [B. Hard Work](http://codeforces.com/problemset/problem/61/B)
+| Canonical Form | Given a string **A** and **B**, return true if A occurs as an anagram in B.| ```Input:```A="car", B="xdfacrcytvharc" <br> ```Output``` (5,3), (11,13)| O(n^m) | NA
 | Replace Characters | Given a string, and a set of queries, each query has two characters. For every query, Replace first character with second in the given string, and vice-versa, and then return the resulting string. | ```Input:``` string="aabbccdd", queries{('a', 'b'), ('c', 'd'), ('d', 'a')} <br> ```Output``` bbddaacc| O(queries) | [B. Rebranding](http://codeforces.com/problemset/problem/591/B)
 
 ## Sorting<a name="sorting"></a>
@@ -91,8 +91,8 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Max Subarray(Less than or equal value) | Given array, find max subarray <= **t**. | ```Input:``` {6, 8, 14, 9, 4, 11, 10}, t=13<br> ```Output``` [3 -> 4]| O(n) | [B. Books](http://codeforces.com/problemset/problem/279/B)
 | Zuma | Given array, and a _tnum_ number that will be inserted at index _tindex_. <br>If at there is three or more contiguous similar numbers, they should be destroyed(erased). <br>This rule is applied until there are no more three or more contiguous similar numbers.<br> Count the destroyed numbers | ```Input:``` {5, 4, 4, 2, 2, 4, 4, 5, 5, 1, 7, 6}, tnum=2, tindex=4<br> ```Output``` 10| O(n) | [B. Balls Game](http://codeforces.com/problemset/problem/430/B)
 | Guess the Number | Given a set of queries like ">=1", "<2", ">-3", ...etc.<br>Guess the range of numbers that achieves these queries | ```Input:``` {">=", 1}, {">=", 3}, {">", -3}, {"<=", 55}<br> ```Output``` [3, 55]| O(n) | [416A - Guess a number!](http://codeforces.com/problemset/problem/416/A)
-| Reverse Number | Given array of values, Find All **Xs** & **Ys** in array, where X + Y = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {2, 8}, {4, 6}, {5, 5}| O(n) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
-
+| Exact Sum | Given array of 10^5 elements, Find All **Xs** & **Ys**, where X + Y = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {2, 8}, {4, 6}, {5, 5}| O(n) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
+| 3SUM | Given array of 10^5 elements, Find All **Is** & **Js** & **Ks**, where I + J + K = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {1, 4, 5}| O(n*n) | NA
 
 ## Maximum Sum<a name="maximum-sum"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -135,7 +135,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 	|
 | Fibonanci | Calculate the [fibonanci](https://en.wikipedia.org/wiki/Fibonacci_number) number | ```Input:``` 5 <br> ```Output``` 8 | O(2n ~ n) | NA
-| Divide | Given a number, get f(n) where f(n) = f(n/2) + f(n/2) and f(0) = f(1) = 1. <br>(i.e. If n = 7, f(7) = f(3) + f(4))| ```Input:``` 7 <br> ```Output``` 7 | NA | NA
+| Divide | Given a number, get f(n) where f(n) = f(n/2) + f(n/2), f(0) = f(1) = 1, and n <= 2^31. <br>(i.e. If n = 7, f(7) = f(3) + f(4))| ```Input:``` 7 <br> ```Output``` 7 | NA | [TRUCKL](http://www.spoj.com/problems/TRUCKL/)
 
 ## Binary Search<a name="binary-search"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -167,13 +167,14 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
 | ------------- | ------------- | ------------- | -----      | ----- 
 | Guess the Data Structure | Given set of insertion and deletion with the return values. <br>Guess whether the data structure is queue, stack or priority queue(largest value) | ```Input:``` {"insert", 2}, {"insert", 1}, {"pop", 1}, {"pop", 2}<br> ```Output``` stack | O(n) | [I Can Guess the Data Structure!](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3146)
-| Unique Sets | Generate max number of unique sets of length **L**| ```Input:``` {1, 2, 3, 4, 4, 4, 7, 8, 9, 10}, L=2<br> ```Output``` {4, 10}, {4, 9}, {8, 7}, {4, 3}, {2, 1}| O(NlongN) | NA
+| Unique Sets | Generate max number of unique sets of length **L**. It's not valid to use one array element more than once.| ```Input:``` {1, 2, 3, 4, 4, 4, 7, 8, 9, 10}, L=2<br> ```Output``` {4, 10}, {4, 9}, {8, 7}, {4, 3}, {2, 1}| O(NlongN) | NA
 | Generate Subarrays | Given array, Loop through each subarray of length **L**. | ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, L=5<br> ```Output``` 4321 | O((N/2)^2) | NA
 | Alternating Array | Given array, perform on each 4 consecutive elements the following operations: +1, -1, 0, 0.| ```Input:``` {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} <br> ```Output``` { 2, 1, 3, 4, 6, 5, 7, 8, 10, 9 }| O(n) | [B - Jzzhu and Sequences](http://codeforces.com/problemset/problem/450/B)
-| Draw Triangle | Given **N** >= 3. Draw Triangle(Check Test Case) | ```Input:``` 5<br> ```Output``` <br>##D##<br>#DDD#<br>DDDDD<br>#DDD#<br>##D##| O(N^2) | [A. Little Pony and Crystal Mine](http://codeforces.com/problemset/problem/454/A), [A. Valera and X](http://codeforces.com/problemset/problem/404/A)
+| Draw Triangle | Given **N** >= 3. Draw Triangle(_Check Test Case in src_) | ```Input:``` 5<br> ```Output``` <br>##D##<br>#DDD#<br>DDDDD<br>#DDD#<br>##D##| O(N^2) | [A. Little Pony and Crystal Mine](http://codeforces.com/problemset/problem/454/A), [A. Valera and X](http://codeforces.com/problemset/problem/404/A)
 | Unique Numbers | Given array of numbers, return count of unique values, and print them| ```Input:``` {7, 2, 4, 5, 16, 2, 0, 2, 4, 6}<br> ```Output``` count=7, numbers={7, 2, 4, 5, 16, 0, 6} | O(n) | [A. Inna and Alarm Clock](http://codeforces.com/problemset/problem/390/A), [A. Valera and Antique Items](http://codeforces.com/problemset/problem/441/A), [A. I Wanna Be the Guy](http://codeforces.com/problemset/problem/469/A), [A. Asphalting Roads](http://codeforces.com/problemset/problem/583/A)
 | Hamming Distance Sum | Given a string **X** of length <= 10^5 with 1s and 0s, and string **Y** with length <= length of X. Get summation of numbers of different bits for each sub-string of X with string Y.| ```Input:``` Y="01", X="00111"<br> ```Output``` 3 | O(N) | [B. Hamming Distance Sum](http://codeforces.com/contest/608/problem/B)
 | Adjacent Characters | Given 2D array **N x M** of '.' & '#' characters, and set of queries, each query with two numbers **c1 & c2**. For each query, return the summation of number of two adjacent '.' characters in each row from column c1 to c2.| ```Input:``` N=5,M=8,<br>{{....#..#},{.#......},{##.#....},{##..#.##},{........}},<br>queries={(1,3),(2,5)}<br> ```Output``` {6, 9} | O(queries * N) | [C. New Year and Domino](http://codeforces.com/contest/611/problem/C)
+| Lowest Common Ancestor | Given two nodes in a tree(with and without parent pointers), return their lowest common ancestor.| ```Input:``` _Check Test Case in src_<br> ```Output```  | O(h), O(n) | NA
 
 ## Support <a name="support"></a>
 I've written these snippets in my free time during my studies. If you find it useful, please support the project by spreading the word.

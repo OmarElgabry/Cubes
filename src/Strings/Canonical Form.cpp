@@ -1,51 +1,67 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <algorithm>
-#include <vector>
+#include <unordered_map>
 using namespace std;
 
-const int n = 3;
-vector<string> str_permutation;
+bool is_anagram(string &s1, string &s2){
 
-void permutation(string str){
+	// sort(s1.begin(), s1.end());
+	sort(s2.begin(), s2.end());
 
-	istringstream istr(str);
-	string str_list[n];
-	int i = 0;
-
-	while (istr >> str_list[i++]){
-	}
-
-	sort(str_list, str_list + n);
-
-	do{
-		string temp = "";
-		for (int i = 0; i < n; i++){
-			temp += str_list[i];
-		}
-		str_permutation.push_back(temp);
-	} while (next_permutation(str_list, str_list + n));
-
-
+	return s1 == s2;
 }
 
-int main(){
+int main() {
 
-	// get all possible permutations for the passed string
-	permutation("Happy Coding Day");
+	string A = "car";
+	string B = "xdfacrcytvharc";
+	int size_A = (int)A.size();
+	int size_B = (int)B.size();
 
-	// check if each string equals to the canonical form(all possible permutations for above string)
-	string queries[n] = { "HappyCodingDay", "NotEqualToCanonicalForm", "DayHappyCoding" };
-	int size = (int)str_permutation.size();
+	// size of A must be <= size of B
+	if (size_A > size_B){
+		return 0;
+	}
 
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < size; j++){
-			if (queries[i] == str_permutation[j]){
-				cout << "Found: " << queries[i] << endl;
+	// METHOD 1
+
+	// sort A once here, intead of sorting A everytime in is_anagram()
+	sort(A.begin(), A.end());
+
+	for (int i = 0; i < size_B - size_A + 1; i++){
+		string sub_string = B.substr(i, size_A);
+		if (is_anagram(A, sub_string)){
+			printf("A occures as anagram in B from index %d to %d\n", i, i + size_A - 1);
+		}
+	}
+
+	// METHOD 2
+
+	for (int i = 0; i < size_B - size_A + 1; i++){
+
+		unordered_map<char, int> mp;
+
+		for (int k = 0; k < size_A; k++){
+			mp[A[k]]++;
+		}
+
+		string sub_string = B.substr(i, size_A);
+		for (int j = 0; j < size_A; j++){
+			mp[sub_string[j]]--;
+		}
+
+		bool found = true;
+		for (unordered_map<char, int>::iterator it = mp.begin(); it != mp.end(); it++){
+			if (it->second != 0) {
+				found = false;
 				break;
 			}
+		}
+
+		if (found){
+			printf("A occures as anagram in B from index %d to %d\n", i, i + size_A - 1);
 		}
 	}
 
