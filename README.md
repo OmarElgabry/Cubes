@@ -93,6 +93,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Guess the Number | Given a set of queries like ">=1", "<2", ">-3", ...etc.<br>Guess the range of numbers that achieves these queries | ```Input:``` {">=", 1}, {">=", 3}, {">", -3}, {"<=", 55}<br> ```Output``` [3, 55]| O(n) | [416A - Guess a number!](http://codeforces.com/problemset/problem/416/A)
 | Exact Sum | Given array of 10^5 elements, Find All **Xs** & **Ys**, where X + Y = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {2, 8}, {4, 6}, {5, 5}| O(n) | [Exact Sum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1998)
 | 3SUM | Given array of 10^5 elements, Find All **Is** & **Js** & **Ks**, where I + J + K = goal | ```Input:``` {1, 2, 4, 6, 10, 5, 13, 8, 14, 5}, goal=10<br> ```Output``` {1, 4, 5}| O(n*n) | NA
+| Regular Expression Parser | Given a string and regular expression, parse the regular expression and check if the string matches. It can contain "*", and "+" wildcards. | ```Input:``` str="ac", pattern="a+b*c+"<br> ```Output``` true | O(n) | NA
 
 ## Maximum Sum<a name="maximum-sum"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
@@ -175,6 +176,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Hamming Distance Sum | Given a string **X** of length <= 10^5 with 1s and 0s, and string **Y** with length <= length of X. Get summation of numbers of different bits for each sub-string of X with string Y.| ```Input:``` Y="01", X="00111"<br> ```Output``` 3 | O(N) | [B. Hamming Distance Sum](http://codeforces.com/contest/608/problem/B)
 | Adjacent Characters | Given 2D array **N x M** of '.' & '#' characters, and set of queries, each query with two numbers **c1 & c2**. For each query, return the summation of number of two adjacent '.' characters in each row from column c1 to c2.| ```Input:``` N=5,M=8,<br>{{....#..#},{.#......},{##.#....},{##..#.##},{........}},<br>queries={(1,3),(2,5)}<br> ```Output``` {6, 9} | O(queries * N) | [C. New Year and Domino](http://codeforces.com/contest/611/problem/C)
 | Lowest Common Ancestor | Given two nodes in a tree(with and without parent pointers), return their lowest common ancestor.| ```Input:``` _Check Test Case in src_<br> ```Output```  | O(h), O(n) | NA
+| Regular Expression | Applying common regular expression patterns for matching, searching and replacing strings using [regex](http://www.cplusplus.com/reference/regex/) | ```Input:``` _Check Test Case in src_<br> ```Output``` | NA | NA
 
 ## Support <a name="support"></a>
 I've written these snippets in my free time during my studies. If you find it useful, please support the project by spreading the word.
