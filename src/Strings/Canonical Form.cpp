@@ -25,7 +25,33 @@ int main() {
 		return 0;
 	}
 
-	// METHOD 1
+	// METHOD 1 - Brute Force
+
+	// store all permutation of string A
+	vector<string> permu_A;
+
+	sort(A.begin(), A.end());
+
+	char *char_A = new char[size_A + 1];
+	strcpy(char_A, A.c_str());
+
+	do{
+		permu_A.push_back(char_A);
+	} while (next_permutation(char_A, char_A + size_A));
+
+	int n_permu = (int)permu_A.size();
+	for (int i = 0; i < size_B - size_A + 1; i++){
+		string sub_string = B.substr(i, size_A);
+		for (int j = 0; j < n_permu; j++){
+			if (permu_A[j] == sub_string){
+				printf("A occures as anagram in B from index %d to %d\n", i, i + size_A - 1);
+				break;
+			}
+		}
+	}
+
+
+	// METHOD 2 - Canonical Form
 
 	// sort A once here, intead of sorting A everytime in is_anagram()
 	sort(A.begin(), A.end());
@@ -37,8 +63,11 @@ int main() {
 		}
 	}
 
-	// METHOD 2
+	// METHOD 3 - Recording count of letters
 
+	// Instead of using one map, we can use two, one for string A, and another for each substring of B.
+	// So, every loop, check if both maps have the same size, 
+	// and every character in map A exists in map B with the same number of apperance. 
 	for (int i = 0; i < size_B - size_A + 1; i++){
 
 		unordered_map<char, int> mp;
