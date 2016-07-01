@@ -5,13 +5,14 @@ using namespace std;
 int main(){
 
 	const int n = 5;
-	int arr[n + 1] = { 0, 3, 4, 1, 2, 5 };
+	int arr[n + 1] = { 1, 3, 4, 1, 2, 5 };
 	int cum[n + 1];
 
 	for (int i = 0; i <= n; i++){
 		cum[i] = 0;
 	}
 
+	cum[0] = arr[0];
 	for (int i = 1; i <= n; i++)
 		cum[i] = cum[i - 1] + arr[i];
 

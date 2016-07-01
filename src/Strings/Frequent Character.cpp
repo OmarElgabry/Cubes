@@ -18,8 +18,10 @@ int main(){
 			mp[str[i]]++;
 			cunt[tolower(str[i]) - 'a']++;
 
-			if (mx1 < mp[str[i]])					mx1 = mp[str[i]];
-			if (mx2 < cunt[tolower(str[i]) - 'a'])	mx2 = cunt[tolower(str[i]) - 'a'];
+			if (mx1 < mp[str[i]])
+				mx1 = mp[str[i]];
+			if (mx2 < cunt[tolower(str[i]) - 'a'])	
+				mx2 = cunt[tolower(str[i]) - 'a'];
 		}
 	}
 

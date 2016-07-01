@@ -14,9 +14,9 @@ void combination(int i, int len){
 		return;
 	}
 
-	for (int value = i; value < n; value++){
-		cur[len] = arr[value];
-		combination(value + 1, len + 1);
+	for (int index = i; index < n; index++){
+		cur[len] = arr[index];
+		combination(index + 1, len + 1);
 	}
 
 	return;

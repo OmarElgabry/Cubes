@@ -15,7 +15,11 @@ int main() {
 
 	for (int i = 0; str[i]; i++){
 		if (isalpha(str[i])){
+
+			// using set
 			s.insert(str[i]);
+			
+			// using bool array
 			if (!cunt[tolower(str[i]) - 'a'])
 				cunt[tolower(str[i]) - 'a'] = 1, total++;
 		}

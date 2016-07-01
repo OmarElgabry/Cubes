@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-char grid[3][3];
-int n, k;
+const int n = 2, k = 2;
+char grid[n][n];
 
 char getColor(int r, int c, int cunt){
 
-	if (grid[r % n][c % n] == '*')
-		return '*';
+	if (grid[r % n][c % n] == 'b')
+		return 'b';
 	else if (cunt == 1)
-		return '.';
+		return 'w';
 
 	return getColor(r / n, c / n, cunt - 1);
 }
@@ -19,12 +19,10 @@ int main() {
 
 	/*
 		Test case:
-		2 3
-		.*
-		..
+		w b
+		w w
 	*/
 
-	cin >> n >> k;
 	for (int i = 0; i<n; i++)
 		for (int j = 0; j<n; j++)
 			cin >> grid[i][j];
@@ -36,8 +34,8 @@ int main() {
 		for (int j = 0; j < c; j++){
 			if (k == 1)
 				printf("%c", grid[i][j]);
-			else if (grid[i / (int)(pow(n, k - 1))][j / (int)(pow(n, k - 1))] == '*')
-				printf("*");
+			else if (grid[i / (int)(pow(n, k - 1))][j / (int)(pow(n, k - 1))] == 'b')
+				printf("b");
 			else
 				printf("%c", getColor(i, j, k - 1));
 		}

@@ -23,6 +23,8 @@ int main(){
 		if (window[indexL] < window[l]){
 			indexL = l;
 		}
+
+		// every loop we compare total Vs max sub array we found so far at left + current sub array at right
 		if (total < window[indexL] + window[r]){
 			total = window[indexL] + window[r];
 			finalL = indexL;

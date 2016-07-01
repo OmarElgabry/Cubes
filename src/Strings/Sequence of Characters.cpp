@@ -6,7 +6,7 @@ using namespace std;
 int main(){
 
 	string str = "can you find the given characters in order?";
-	string find = "yes"; // Indexes: 4, 15, 32
+	string find = "fire";	// Indexes: 8, 9, 26, 30
 	int j = 0;
 
 	for (int i = 0; str[i]; i++){

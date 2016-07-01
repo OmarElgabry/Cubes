@@ -20,7 +20,7 @@ int main(){
 		cum[i] = cum[i - 1] + mark[i];
 
 
-	int start = 3, end = 9; // (1 -> n)
+	int start = 3, end = 9;
 
 	cout << cum[end] - cum[start - 1] << endl;
 
