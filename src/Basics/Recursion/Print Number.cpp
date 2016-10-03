@@ -23,11 +23,9 @@ int main(){
 	int n = 213;
 
 	printNumber(n);
-
 	printf("\n");
 
 	printNumberInBits(n);
-
 	printf("\n");
 
 	return 0;

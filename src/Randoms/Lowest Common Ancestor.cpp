@@ -86,7 +86,7 @@ int LCA(Node *root, int p, int q){
 	// Store paths of p and q from the root
 	vector<int> p_path, q_path;
 
-	// Find paths from root to p and root to p.
+	// Find paths from root to p and root to q.
 	if (!findPath(root, p_path, p) || !findPath(root, q_path, q))
 		return -1;
 
