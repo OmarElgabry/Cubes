@@ -7,7 +7,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 ## Index
 | Basics | Adhocks | Path Finding & Traversing Tree | Randoms |
 | ------ | ------- | ------- | ------- |
-| <ul><li>[Numbers](#numbers) </li> <li>[Strings](#strings)</li> <li>[Searching](#searching)</li> <li>[Sorting](#sorting)</li> <li>[Recursion](#recursion)</li> <li>[Bits](#bits) </li> </ul> |  <ul><li>[Cumulative Array](#cumulative-array) <li>[Window](#window)</li> <li>[Two Pointers](#two-pointers)</li> </ul> | <ul><li>[BFS](#bfs)  <li>[DFS](#dfs)</li> <li>[DP](#dp)</li> </ul>  | <ul><li>[Randoms](#randoms) </li> </ul>
+| <ul><li>[Numbers](#numbers) </li> <li>[Strings](#strings)</li> <li>[Searching](#searching)</li> <li>[Sorting](#sorting)</li> <li>[Recursion](#recursion)</li> <li>[Bits](#bits) </li> </ul> |  <ul><li>[Cumulative Array](#cumulative-array) <li>[Window](#window)</li> <li>[Two Pointers](#two-pointers)</li> </ul> | <ul><li>[BFS](#bfs)  <li>[DFS](#dfs)</li> <li>[DP](#dp)</li> <li>[Path Finding Algorithms](#path-finding)</li> </ul>  | <ul><li>[Randoms](#randoms) </li> </ul>
 
 + [Support](#support)
 + [Contribute](#contribute)
@@ -118,6 +118,10 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Fibonacci | Calculate the [fibonanci](https://en.wikipedia.org/wiki/Fibonacci_number) value of N. | ```Input:``` <br> 5 <br> ```Output:``` <br>  8 | O(2N ~ N) | —
 | Divide | Given a number, get f(n) where f(n) = f(n/2) + f(n/2), f(0) = f(1) = 1, and n <= 2^31. <br>_(i.e. If n = 7, then f(7) = f(3) + f(4))_| ```Input:``` 7 <br> ```Output:``` <br>  7 | — | [TRUCKL](http://www.spoj.com/problems/TRUCKL/)
 
+## Path Finding Algorithms<a name="path-finding"></a>
+Implementation of BFS, DFS(Recursive & Iterative), Dijkstra, Greedy, & Astart Algorithms. These algorithms are used to search the tree and finding the shortest paths from starting node to goal node in the tree. 
+
+You can find the source code for these algorithms inside _src/Path Finding & Traversing Tree_ directory.
 
 ## Randoms<a name="randoms"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
