@@ -5,11 +5,10 @@
 Implementation of interesting algorithms in C++ and their related problems on online Judges.
 
 ## Index
-| Basics | Adhocks | Path Finding & Traversing Tree | 
-| ------ | ------- | ------- |
-| <ul><li>[Numbers](#numbers) </li> <li>[Strings](#strings)</li> <li>[Searching](#searching)</li> <li>[Sorting](#sorting)</li> <li>[Recursion](#recursion)</li> <li>[Bits](#bits) </li> </ul> |  <ul><li>[Cumulative Array](#cumulative-array) <li>[Window](#window)[Searching](#searching)</li> <li>[Two Pointers](#two-pointers)</li> </ul> | <ul><li>[BFS](#bfs)  <li>[DFS](#dfs)</li> <li>[DP](#dp)</li> </ul>  | 
+| Basics | Adhocks | Path Finding & Traversing Tree | Randoms |
+| ------ | ------- | ------- | ------- |
+| <ul><li>[Numbers](#numbers) </li> <li>[Strings](#strings)</li> <li>[Searching](#searching)</li> <li>[Sorting](#sorting)</li> <li>[Recursion](#recursion)</li> <li>[Bits](#bits) </li> </ul> |  <ul><li>[Cumulative Array](#cumulative-array) <li>[Window](#window)</li> <li>[Two Pointers](#two-pointers)</li> </ul> | <ul><li>[BFS](#bfs)  <li>[DFS](#dfs)</li> <li>[DP](#dp)</li> </ul>  | <ul><li>[Randoms](#randoms) </li> </ul>
 
-+ [Randoms](#randoms)
 + [Support](#support)
 + [Contribute](#contribute)
 + [License](#license)
