@@ -295,7 +295,11 @@ int Tree::get_distance(Node *parent, Node *child){
 */
 int Tree::get_heuristics(Node *current, Node *goal){
 
-	int distance = current->heuristic;
+	// check if heuristic distance already assigned
+	int distance = 0;
+	if (current->value == goal->value) return distance;
+
+	distance = current->heuristic;
 	if (distance == NULL){
 		distance = abs(goal->value - current->value);
 	}
