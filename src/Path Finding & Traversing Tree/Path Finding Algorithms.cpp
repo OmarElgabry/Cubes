@@ -340,20 +340,24 @@ Node * Tree::BFS(Node *root, Node *goal){
 
 	queue<Node *> q;
 	q.push(root);
+	this->visited[root->value] = true;
 
 	while (!q.empty()){
 
 		Node * current = q.front();
 		q.pop();	
-		this->visited[current->value] = true;
 
 		for (Node *&child : current->children){
 			if (!this->visited[child->value]){				// check if not visited
+
+				// mark each node as visited so it won't be added to the queue again, thus, it will be explored only once.
+				this->visited[child->value] = true;
+
 				child->distance = current->distance + 1;	// every level we increment by 1, so all nodes at level 2 has distance of 2.
 				child->parent = current;
 
 				if (child->value == goal->value)
-					return child;							// if goal node is found, then it's guranteed that this node has the shortest path
+					return child;							// if goal node is found, then it's guranteed that this node has the shortest path(according to the level of depth)
 				q.push(child);								// since the bfs searches the tree level by level.
 			}
 		}					
