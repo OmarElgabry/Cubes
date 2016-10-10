@@ -1,4 +1,4 @@
-﻿#include <cstdlib>
+#include <cstdlib>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -493,33 +493,32 @@ Node * Tree::Dijkstra(Node *root, Node *goal){
 */
 Node * Tree::Greedy(Node *root, Node *goal){
 
-	Node * current = root;
+	for (Node *&node : this->nodes){
+		node->distance = INT_MAX;
+	}
 
-	while (current->value != goal->value){
+	root->distance = this->get_heuristics(root, goal);
+	int count = this->N;
 
-		Node * next_node = NULL;
-		int mn = INT_MAX;
+	while (count--){
 
+		// everytime we choose the node with the min distance from the goal node.
+		// root node will be selected first.
+		Node * current = this->get_min_node();
 		this->visited[current->value] = true;
+
+		if (current->value == goal->value)
+			return current;
 
 		for (Node *&child : current->children){
 			if (!this->visited[child->value]){
 				child->parent = current;
 				child->distance = this->get_heuristics(child, goal);
-
-				// we choose what child node appears to be the immediate optimal choice
-				// based on which child node has the min heuristics distance to the goal. 
-				if (mn > child->distance){
-					mn = child->distance;
-					next_node = child;
-				}
 			}
 		}
-			
-		current = next_node;
 	}
 
-	return current;
+	return NULL;
 }
 
 /**
