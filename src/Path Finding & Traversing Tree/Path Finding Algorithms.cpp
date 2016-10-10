@@ -57,6 +57,13 @@ struct Node {
 	* @var int
 	*/
 	int distance;
+
+	/**
+	* heuristic distances between the node and the goal node
+	*
+	* @var int
+	*/
+	int heuristic;
 	
 	/**
 	* a reference to parent node
@@ -113,7 +120,7 @@ public:
 	Tree(int N);
 	
 	Node * createNode(int value);
-	void add_edge(Node *parent, Node *child);
+	void add_edge(Node *parent, Node *child, int distance);
 	void reset();
 	
 	Tree & print_tree(Node *root);
@@ -150,9 +157,6 @@ Tree::Tree(int N) {
 	this->dist_between = new int *[N];
 	for (int i = 0; i < N; ++i) {
 		this->dist_between[i] = new int[N];
-		for (int j = 0; j < N; j++){
-			this->dist_between[i][j] = (i == j) ? 0 : NULL;
-		}
 	}
 }
 
@@ -179,11 +183,19 @@ Node * Tree::createNode(int value) {
 *
 * @param Node* parent
 * @param Node* child
+* @param int   distance
 */
-void Tree::add_edge(Node *parent, Node *child){
+void Tree::add_edge(Node *parent, Node *child, int distance){
 
 	// Add child to parent's list.
-	parent->children.push_back(child);		
+	parent->children.push_back(child);
+
+	// Assign distance
+	if (distance != NULL){
+		this->dist_between[parent->value][child->value] = 
+			this->dist_between[child->value][parent->value] = distance;
+	}
+
 }
 
 /**
@@ -204,12 +216,19 @@ void Tree::reset(){
 Tree & Tree::print_tree(Node *root){
 	
 	for (Node *&current : this->nodes){
-		printf("Node %c connected to: ", ('A' + current->value));
+		printf("Node (%c, h=%d) connected to: ", ('A' + current->value), current->heuristic);
 		for (Node *&child : current->children){
-			printf("%c ", ('A' + child->value));
+			printf("(%c, d=%d)", ('A' + child->value), 
+				this->dist_between[child->value][current->value]);
 		}
 		printf("\n");
 	}
+	
+	// printf("Heuristic distance from %c to %c = %d \n",
+	// 	('A' + current->value), ('A' + goal->value), distance);
+
+	// printf("Distance from %c to %c = %d \n",
+	//	('A' + parent->value), ('A' + child->value), random);
 
 	return *this;
 }
@@ -225,16 +244,19 @@ Tree & Tree::print_path(Node *goal){
 
 	Node *current = goal;
 
-	// TODO 
-	// compute cost for every algorithm(the way to compute the cost for every algorithm might be different)
+	// compute cost for every algorithm
 	int cost = 0;
 
 	while (current != NULL){
 		printf("%c ", ('A' + current->value));
+
+		if (current->parent != NULL)
+			cost += this->get_distance(current, current->parent);
+		
 		current = current->parent;
 	}
 
-	// printf("\t with cost: %d ", cost);
+	printf("\t and cost: %d ", cost);
 	printf("\n");
 
 	return *this;
@@ -250,18 +272,16 @@ Tree & Tree::print_path(Node *goal){
 int Tree::get_distance(Node *parent, Node *child){
 
 	// check if distance already assigned
-	int distance = this->dist_between[parent->value][child->value];
-	if (distance != NULL){
-		return distance;
-	}
+	int distance = 0;
+	if (parent->value == child->value)	return distance;
+	
+	distance = this->dist_between[parent->value][child->value];
+	if (distance != NULL)	return distance;
 
 	// if not, generate a random distance between parent and child node
 	int random = (int)rand() % 10 + 1;
 	this->dist_between[parent->value][child->value] =
 		this->dist_between[child->value][parent->value] = random;
-
-	// printf("Distance from %c to %c = %d \n",
-	//	('A' + parent->value), ('A' + child->value), random);
 
 	return random;
 }
@@ -275,10 +295,10 @@ int Tree::get_distance(Node *parent, Node *child){
 */
 int Tree::get_heuristics(Node *current, Node *goal){
 
-	int distance = abs(goal->value - current->value);
-
-	// printf("Heuristic distance from %c to %c = %d \n",
-	// 	('A' + current->value), ('A' + goal->value), distance);
+	int distance = current->heuristic;
+	if (distance == NULL){
+		distance = abs(goal->value - current->value);
+	}
 
 	return distance;
 }
@@ -369,7 +389,7 @@ Node * Tree::DFS(Node *current, Node *goal){
 * Find goal node from root node using DFS(Recursive)
 * The difference between this method & DFS() is that:
 * 1. If a node X is explored, it can be explored again as long as there is no node X in the path up to the starting node.
-* 2. If the node X is the goal, the algorithm will try to search for another shorter path to the goal node.
+* 2. If the node X is the goal, the algorithm will try to search for another shorter path to the goal node by examining the level of depth.
 *
 * @param Node* root
 * @param Node* goal
@@ -590,19 +610,22 @@ int main() {
 	}
 
 	// create edges
-	vector< vector <int > > node_edges = { 
-			{ 1, 2 }, 
-			{ 0, 3, 4 }, 
-			{ 0, 3, 5 }, 
-			{ 1, 2, 4 }, 
-			{ 1, 3, 6 }, 
-			{ 2, 6 }, 
-			{ 4, 5 }
+	vector< vector <int > > node_edges = {
+			{ 1, 2 }, { 0, 3, 4 }, { 0, 3, 5 }, { 1, 2, 4 }, { 1, 3, 6 }, { 2, 6 }, { 4, 5 }
 	};
 
+	// distances between nodes
+	vector< vector <int > > nodes_distances = {
+			{ 4, 1 }, { NULL, 3, 8 }, { NULL, 2, 6 }, { NULL, NULL, 4 }, { NULL, NULL, 2 }, { NULL, 8 }, { NULL, NULL }
+	};
+
+	// heuristic distance to the goal
+	vector< int > nodes_heuristics = { 8, 8, 6, 5, 1, 4, 0 };
+
 	for (int i = 0; i < num_nodes; i++){
-		for (int j = 0; j < (int) node_edges[i].size(); j++){
-			tree.add_edge(nodes[i], nodes[node_edges[i][j]]);
+		nodes[i]->heuristic = nodes_heuristics[i];
+		for (int j = 0; j < (int)node_edges[i].size(); j++){
+			tree.add_edge(nodes[i], nodes[node_edges[i][j]], nodes_distances[i][j]);
 		}
 	}
 
