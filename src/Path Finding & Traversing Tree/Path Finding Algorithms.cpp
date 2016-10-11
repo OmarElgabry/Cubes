@@ -579,22 +579,20 @@ Node * Tree::Astar(Node *root, Node *goal){
 			return current;
 
 		for (Node *&child : current->children){
-			if (!this->visited[child->value]){
-				
-				int d = this->get_distance(current, child);
-				int h = get_heuristics(child, goal);
-				int alt = (current->distance - get_heuristics(current, goal)) + d + h;
-				// int alt = this->get_distance(root, current) + d + h;
 
-				// A shorter path to child has been found
-				if (alt < child->distance){
-					child->distance = alt;
-					child->parent = current;
+			int d = this->get_distance(current, child);
+			int h = get_heuristics(child, goal);
+			int alt = (current->distance - get_heuristics(current, goal)) + d + h;
+			// int alt = this->get_distance(root, current) + d + h;
 
-					// this node is now available to be re-explored again since a new shorter path to this node has been discovered.
-					// if however, the heuristic function is monotonic (or consistent), which is a frequent case, then nodes can be explored only once.
-					this->visited[child->value] = false;
-				}
+			// A shorter path to child has been found
+			if (alt < child->distance){
+				child->distance = alt;
+				child->parent = current;
+
+				// this node is now available to be re-explored again since a new shorter path to this node has been found.
+				// if however, the heuristic function is monotonic (or consistent), which is a frequent case, then nodes can be explored only once.
+				this->visited[child->value] = false;
 			}
 		}	
 	}
