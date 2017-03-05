@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-	const int n = 10, l = 3; // given l <= n
+	const int n = 10, l = 3;	// given l <= n
 	int arr[n] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 	for (int i = 1; i < n; i++){

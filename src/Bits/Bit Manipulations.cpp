@@ -15,7 +15,7 @@ int main(){
 	printf("set 3rd bit from right to 1: %d\n", num);
 
 	// Return 2^k, where k is th position of first 1-bit(from right)
-	num = num & -num;
+	num = num & -num;		// -num = reverse bits of num, then add 1.
 	printf("2^k: %d\n", num);
 
 	// Get number of different bits

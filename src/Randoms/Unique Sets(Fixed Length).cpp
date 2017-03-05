@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <queue>
 using namespace std;
 
@@ -10,18 +10,18 @@ int main(){
 	int arr[n] = { 1, 2, 3, 4, 4, 4, 7, 8, 9, 10 }, len = 2;
 
 	vector<pair<int, int>> v(len);
-	map<int, int>mp;
+	unordered_map<int, int>mp;
 	priority_queue < pair<int, int>>pq;
 
 	for (int i = 0; i < n; i++){
 		mp[arr[i]]++;
 	}
 
-	for (map<int, int>::iterator it = mp.begin(); it != mp.end(); it++){
+	for (unordered_map<int, int>::iterator it = mp.begin(); it != mp.end(); it++){
 		pq.push(make_pair(it->second, it->first));
 	}
 
-	while ((int)pq.size() > len - 1){
+	while ((int)pq.size() >= len){
 
 		for (int i = 0; i < len; i++){
 			v[i] = pq.top();

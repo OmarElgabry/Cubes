@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include <iostream>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 long long const n = 1000000000000;
-map<long long, long long> save;
+unordered_map<long long, long long> save;
 
 long long divide(long long n){
 

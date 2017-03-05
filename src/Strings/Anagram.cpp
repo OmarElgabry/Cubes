@@ -7,6 +7,8 @@ using namespace std;
 
 bool is_anagram(string &s1, string &s2){
 
+	// The canonical form is: SORT(X)
+
 	// sort(s1.begin(), s1.end());
 	sort(s2.begin(), s2.end());
 
@@ -65,11 +67,11 @@ int main() {
 
 	// METHOD 3 - Recording count of letters
 
-	// Instead of using one map, we can use two, one for string A, and another for each substring of B.
-	// So, every loop, check if both maps have the same size, 
-	// and every character in map A exists in map B with the same number of apperance. 
 	for (int i = 0; i < size_B - size_A + 1; i++){
 
+		// Instead of using one map, we can use two, one for string A, and another for each substring of B.
+		// So, every loop, check if both maps have the same size, 
+		// and every character in map A exists in map B with the same number of apperance.
 		unordered_map<char, int> mp;
 
 		for (int k = 0; k < size_A; k++){
