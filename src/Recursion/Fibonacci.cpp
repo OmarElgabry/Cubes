@@ -12,7 +12,7 @@ int fibonacci(int n){
 	return fibonacci(n - 2) + fibonacci(n - 1);
 }
 
-void fibonacci_series(int n){
+void fibonacci2(int n){
 
 	int cur = 0, temp = 0, next = 1;
 
@@ -22,7 +22,7 @@ void fibonacci_series(int n){
 		next = temp + next;
 	}
 
-	// printf("The fibonanci value for n: %d", cur);
+	printf("The fibonanci value for n: %d\n", cur);
 }
 
 int main(){
@@ -32,7 +32,7 @@ int main(){
 	printf("The fibonanci value for %d: %d\n", n, fibonacci(n));
 
 	printf("The fibonanci series for first %d numbers: \n", n);
-	fibonacci_series(n);
+	fibonacci2(n);
 
 	return 0;
 }
