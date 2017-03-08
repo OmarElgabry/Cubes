@@ -9,7 +9,7 @@ int arr[n] = { 1, 10, -3, 2, -40, -4, 5, 3, 18, -2 };
 
 int kadane(){
 
-	int sum = 0, mx = (int)-1e9;
+	int sum = 0, mx = arr[0];
 	tl = l = r = 0;
 
 	for (int i = 0; i < n; i++){
