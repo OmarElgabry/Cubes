@@ -70,7 +70,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | ------------- | ------------- | ------------- | -----      | ----- 	|
 | Range Sum(1D Array) | Given an array, and set of queries: _start_ and _end_, what is sum of values in range [start, end]. | ```Input:``` <br>array={1, 3, 4, 2, 5}, start=2, end=5<br> ```Output:``` <br>  14 | O(N) | —
 | Max 1D Subarray(Fixed Length) | Given array, what's the max sub array of length **L**. | ```Input:```<br>array={1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, L=3<br> ```Output:``` <br>  27 | O(N) | —
-| Adjacent Characters | Given 2D array **N** x **M** of '.' & '#' characters, and set of queries, each query with two numbers c1 & c2. For each query, return the summation of numbers of two adjacent '.' characters in each row from column c1 to c2. | ```Input:``` <br> array=<br> `....#..#` <br> `.#......` <br> `##.#....` <br> `##..#.##` <br> `........` <br>N=5,M=8,<br>queries={(1,3),(2,5)}<br><br> ```Output:``` <br>  {6, 9} | O(N * queries) | [C. New Year and Domino](http://codeforces.com/contest/611/problem/C)
+| Adjacent Characters | Given 2D array **N** x **M** of '.' & '#' characters, and set of queries, each query with two numbers c1 & c2. For each query, return the summation of numbers of two adjacent '.' characters in each row from column c1 to c2. | ```Input:``` <br> array=<br> `....#..#` <br> `.#......` <br> `##.#....` <br> `##..#.##` <br> `........` <br>N=5,M=8,<br>queries={(1,3),(2,5)}<br><br> ```Output:``` <br>  {6, 9} | O(N * M), O(N * queries) | [C. New Year and Domino](http://codeforces.com/contest/611/problem/C)
 
 ## Window<a name="window"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
