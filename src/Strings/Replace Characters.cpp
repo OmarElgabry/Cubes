@@ -1,14 +1,14 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
 int main(){
 
-	char i, t;
-	map<char, char> mp;
+	char i;
+	unordered_map<char, char> mp;			// or using char[] array
 	for (i = 'a'; i <= 'z'; i++) mp[i] = i;
 
 	string str = "aabbccdd";
@@ -22,8 +22,12 @@ int main(){
 		x = queries[j].first;
 		y = queries[j].second;
 
-		for (i = 'a'; i <= 'z'; i++)   if (mp[i] == x) mp[i] = y, t = i;
-		for (i = 'a'; i <= 'z'; i++)   if (mp[i] == y && i != t) mp[i] = x;
+// 		for (i = 'a'; i <= 'z'; i++)   if (mp[i] == x) mp[i] = y, t = i;
+// 		for (i = 'a'; i <= 'z'; i++)   if (mp[i] == y && i != t) mp[i] = x;
+		for (i = 'a'; i <= 'z'; i++)   {
+		    if (mp[i] == x)     { mp[i] = y; }
+		    else if(mp[i] == y) { mp[i] = x; }
+		}
 	}
 
 	for (int j = 0; j < (int)str.size(); ++j)
