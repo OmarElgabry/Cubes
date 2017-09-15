@@ -25,7 +25,8 @@ int main(){
 	cout << regex_match("a*bc", astrex) << endl;
 
 	// Phone number
-	// valid patterns: XXX-XXX-XXX, XXX/XXX/XXXX, or XXX.XXX.XXXX
+	// valid patterns: XXX-XXX-XXXX, XXX/XXX/XXXX, or XXX.XXX.XXXX 
+	// The first 3 digits can also be wrapped with brackets: (XXX)-XXX-XXXX 
 	regex phone("^(\\d{3}|\\(\\d{3}\\))([-/\\.])(\\d{3})(\\2)(\\d{4})$");
 	cout << regex_match("123/456/7890", phone) << endl;
 	cout << regex_match("(123).456.7890", phone) << endl;
