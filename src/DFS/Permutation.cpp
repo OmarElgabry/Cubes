@@ -28,6 +28,22 @@ void permutation_dfs(int i) {
 	}
 }
 
+void permutation_swap(int cur) {
+
+	if (cur == n){
+		for (int j = 0; j < n; ++j)
+			cout << num[j];
+		cout << "\n";
+		return;
+	}
+
+	for (int j = cur; j < n; ++j){
+		swap(num[j], num[cur]);
+		permutation_swap(cur+1);
+		swap(num[j], num[cur]);
+	}
+}
+
 void permutation() {
 
 	sort(num, num + n);
@@ -43,7 +59,10 @@ int main() {
 
 	// using recursion
 	permutation_dfs(0);
-
+	
+	// using swapping
+	permutation_swap(0);
+	
 	// using next_permutation()
 	permutation();
 
