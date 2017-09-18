@@ -11,7 +11,8 @@ int main(){
 	printf("4th bit from right: %d\n", check);
 
 	// Set a bit to 1(regardless if already 1 or 0)
-	num = (num | (1 << 2));
+	index = 2;
+	num = (num | (1 << index));
 	printf("set 3rd bit from right to 1: %d\n", num);
 
 	// Return 2^k, where k is th position of first 1-bit(from right)
