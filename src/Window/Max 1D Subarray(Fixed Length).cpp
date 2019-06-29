@@ -14,6 +14,8 @@ int main(){
 	}
 
 	int mx = sum;
+	// Alternatively: for (i = l; i < n; i++)
+	// 		  sum = sum - arr[i - l] + arr[i]
 	for (int i = 1; i < n - l + 1; i++){
 		sum = sum - arr[i - 1] + arr[i + l - 1];
 		mx = max(sum, mx);
