@@ -95,6 +95,17 @@ int main() {
 			printf("A occures as anagram in B from index %d to %d\n", i, i + size_A - 1);
 		}
 	}
+	
+	// METHOD 4 - Recording count of letters (using Window)
+	// 1. Record all values in A (by decrementing) 
+	// 2. Record only the first size_A-1 values in B (by adding). This has to be the opposite of previous step.
+	// 3. For loop: i = size_A-1 -> size_B - size_A + 1
+	//	Add value at [i] and decrement value at [i - size_A] (assume i-size_A >= 0)
+	//	Check to see if all values in map are zeros 
+	// Problems: 
+	//	- Map actually increases with every loop while in METHOD 3, it has a max size of 2*size_A
+	// 	- Even if it is not, the complexity is the same: O(N * size_A). 
+	//	- In fact, METHOD 4 takes O(N^2) because of the growing Map.
 
 	return 0;
 }
