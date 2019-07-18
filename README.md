@@ -112,7 +112,7 @@ Implementation of interesting algorithms in C++ and their related problems on on
 | Maze | Given 2D array, starting from (0, 0), move to up, left, right and down. <br>Find the goal node by exploring all possible paths | ```Input:``` <br> array=<br> `. . X .` <br> `. X . G` <br> `. . . X` <br> `X . X X` <br><br> ```Output:``` <br>  [1, 3] | — | [C. Maze](http://codeforces.com/problemset/problem/378/C)
 | Connected Cells | Given 2D array, starting from (0, 0), Return the number of connected blocks| ```Input:``` <br> array=<br> `. . X .` <br> `X X X X` <br> `. . . X` <br> `X . X X` <br> <br> ```Output:``` <br>  3 | — | —
 | Generate Binaries | Generate all binary numbers of length **N** and has given number of 1s L, <br>. Print them sorted (in ascending lexicographical order) | ```Input:``` <br> N=4, L=2<br> ```Output:``` <br>  {0011, 0101, 0110, 1001, 1010, 1100}| O(N! / ( (N-L)! * L!)) | [The Hamming Distance Problem](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=670)
-| Lowest Common Ancestor | Given two nodes in a tree(with and without parent pointers).<br> Return their lowest common ancestor.|  _**Check** Test Case in src/DFS/Lowest Common Ancestor_  | O(h), O(N) | —
+| Lowest Common Ancestor | Given two nodes in a tree(with and without parent pointers).<br> Return their lowest common ancestor.|  _**Check** Test Case in src/DFS/Lowest Common Ancestor_ <br> **Check** [Amazon Live Coding - Number of edges between two nodes](https://gist.github.com/OmarElGabry/cad9c61949ebb4a1691d066bc3173012) | O(h), O(N) | —
 
 ## DP<a name="dp"></a>
 | Code Name		| Problem Statement | Test Case | Complexity | Related Problems |
